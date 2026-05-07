@@ -10,13 +10,16 @@ venv/
 .venv/
 
 # Input data (large media files)
-input/
+input/*
+!input/.gitkeep
 
 # Output data (generated videos, metadata, subtitles)
-output/
+output/*
+!output/.gitkeep
 
 # Temporary files (audio extracts, transcriptions)
-temp/
+temp/*
+!temp/.gitkeep
 
 # IDE / Editor
 .vscode/
