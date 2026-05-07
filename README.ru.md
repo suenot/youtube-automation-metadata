@@ -101,7 +101,7 @@ bash scripts/run.sh
 
 ## Связанные проекты
 
-- [video_maker](../video_maker/) — генерирует само видео из аудио + PDF-слайдов
+- [video-maker](https://github.com/suenot/video-maker) — генерирует само видео из аудио + PDF-слайдов
 
 ## Лицензия
 

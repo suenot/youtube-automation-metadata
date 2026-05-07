@@ -101,7 +101,7 @@ The tool expects blog articles in Markdown with YAML frontmatter at a configurab
 
 ## Related Projects
 
-- [video_maker](../video_maker/) — generates the video itself from audio + PDF slides
+- [video-maker](https://github.com/suenot/video-maker) — generates the video itself from audio + PDF slides
 
 ## License
 
