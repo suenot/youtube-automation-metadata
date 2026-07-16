@@ -2,6 +2,10 @@
 
 Automated pipeline for preparing YouTube metadata from finished videos and blog articles. Generates titles, descriptions, tags, timestamps, and SRT subtitles in both English and Russian.
 
+<p align="center">
+  <img src="assets/video-metadata_comic.png" alt="video-metadata — generate YouTube title, description, tags, chapters, subtitles" width="820">
+</p>
+
 ## 🏭 The Content Factory
 
 video-metadata is **stage 3** of an automated pipeline that turns a **blog
