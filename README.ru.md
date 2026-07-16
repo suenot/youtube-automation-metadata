@@ -1,6 +1,22 @@
-# Video YouTube Prepare
+# video-metadata
 
 Автоматизированный пайплайн для подготовки метаданных YouTube из готовых видео и блог-статей. Генерирует заголовки, описания, теги, таймкоды и SRT-субтитры на английском и русском языках.
+
+## 🏭 Контент-завод
+
+video-metadata — **этап 3** автоматического конвейера, который превращает **статью
+в блоге в опубликованное видео на YouTube** — без API-ключей, целиком через
+залогиненные браузерные сессии (Camoufox) и локальные медиа-инструменты.
+
+| # | Этап | Репозиторий | Что делает |
+|---|------|-------------|-----------|
+| 1 | Генерация | [gaia](https://github.com/suenot/gaia) | Управляет NotebookLM / Gemini / Flow из залогиненной сессии → аудио-обзор + слайды |
+| 2 | Сборка | [video-maker](https://github.com/suenot/video-maker) | Аудио + PDF-слайды → синхронизированный MP4 (+ SRT, миниатюра) |
+| **3** | **Описание** | **[video-metadata](https://github.com/suenot/video-metadata)** ⬅ *этот репозиторий* | Видео + статья → title / description / теги / тайм-коды глав для YouTube |
+| 4 | Публикация | [video-publisher](https://github.com/suenot/video-publisher) | Управляет YouTube Studio → заливка с метаданными, выбор канала, видимость |
+
+**Поток:** `статья → gaia → video-maker → video-metadata → video-publisher → YouTube`
+(опубликованное видео затем встраивается обратно в статью блога).
 
 ## Что делает
 
@@ -29,7 +45,7 @@ pip install openai-whisper
 ## Структура проекта
 
 ```
-video_youtube_prepare/
+video-metadata/
 ├── scripts/
 │   ├── prepare_metadata.py   # Основной скрипт пайплайна
 │   └── run.sh                # Пакетный запуск для нескольких видео
@@ -101,7 +117,9 @@ bash scripts/run.sh
 
 ## Связанные проекты
 
+- [gaia](https://github.com/suenot/gaia) — генерирует аудио + слайды выше по конвейеру
 - [video-maker](https://github.com/suenot/video-maker) — генерирует само видео из аудио + PDF-слайдов
+- [video-publisher](https://github.com/suenot/video-publisher) — заливает видео (с этими метаданными) на YouTube
 
 ## Лицензия
 

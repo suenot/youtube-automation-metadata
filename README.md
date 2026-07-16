@@ -1,6 +1,22 @@
-# Video YouTube Prepare
+# video-metadata
 
 Automated pipeline for preparing YouTube metadata from finished videos and blog articles. Generates titles, descriptions, tags, timestamps, and SRT subtitles in both English and Russian.
+
+## 🏭 The Content Factory
+
+video-metadata is **stage 3** of an automated pipeline that turns a **blog
+article into a published YouTube video** — no API keys, driven end-to-end through
+logged-in browser sessions (Camoufox) and local media tooling.
+
+| # | Stage | Repo | What it does |
+|---|-------|------|--------------|
+| 1 | Generate | [gaia](https://github.com/suenot/gaia) | Drive NotebookLM / Gemini / Flow from a logged-in session → audio overview + slide deck |
+| 2 | Build | [video-maker](https://github.com/suenot/video-maker) | Audio narration + slide-deck PDF → synced MP4 (+ SRT, thumbnail) |
+| **3** | **Describe** | **[video-metadata](https://github.com/suenot/video-metadata)** ⬅ *this repo* | Video + article → YouTube title / description / tags / chapter timestamps |
+| 4 | Publish | [video-publisher](https://github.com/suenot/video-publisher) | Drive YouTube Studio → upload with metadata, channel switch, visibility |
+
+**Flow:** `article → gaia → video-maker → video-metadata → video-publisher → YouTube`
+(the published video is then embedded back into the blog article).
 
 ## What It Does
 
@@ -29,7 +45,7 @@ pip install openai-whisper
 ## Project Structure
 
 ```
-video_youtube_prepare/
+video-metadata/
 ├── scripts/
 │   ├── prepare_metadata.py   # Main pipeline script
 │   └── run.sh                # Batch runner for multiple videos
@@ -101,7 +117,9 @@ The tool expects blog articles in Markdown with YAML frontmatter at a configurab
 
 ## Related Projects
 
+- [gaia](https://github.com/suenot/gaia) — generates the audio + slides upstream
 - [video-maker](https://github.com/suenot/video-maker) — generates the video itself from audio + PDF slides
+- [video-publisher](https://github.com/suenot/video-publisher) — uploads the video (with this metadata) to YouTube
 
 ## License
 
