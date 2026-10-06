@@ -1,14 +1,14 @@
-# video-metadata
+# youtube-automation-metadata
 
 Automated pipeline for preparing YouTube metadata from finished videos and blog articles. Generates titles, descriptions, tags, timestamps, and SRT subtitles in both English and Russian.
 
 <p align="center">
-  <img src="assets/video-metadata_comic.png" alt="video-metadata — generate YouTube title, description, tags, chapters, subtitles" width="820">
+  <img src="assets/video-metadata_comic.png" alt="youtube-automation-metadata — generate YouTube title, description, tags, chapters, subtitles" width="820">
 </p>
 
 ## 🏭 The Content Factory
 
-video-metadata is **stage 3** of an automated pipeline that turns a **blog
+youtube-automation-metadata is **stage 3** of an automated pipeline that turns a **blog
 article into a published YouTube video** — no API keys, driven end-to-end through
 logged-in browser sessions (Camoufox) and local media tooling.
 
@@ -16,10 +16,10 @@ logged-in browser sessions (Camoufox) and local media tooling.
 |---|-------|------|--------------|
 | 1 | Generate | [gaia](https://github.com/suenot/gaia) | Drive NotebookLM / Gemini / Flow from a logged-in session → audio overview + slide deck |
 | 2 | Build | [video-maker](https://github.com/suenot/video-maker) | Audio narration + slide-deck PDF → synced MP4 (+ SRT, thumbnail) |
-| **3** | **Describe** | **[video-metadata](https://github.com/suenot/video-metadata)** ⬅ *this repo* | Video + article → YouTube title / description / tags / chapter timestamps |
+| **3** | **Describe** | **[youtube-automation-metadata](https://github.com/suenot/youtube-automation-metadata)** ⬅ *this repo* | Video + article → YouTube title / description / tags / chapter timestamps |
 | 4 | Publish | [video-publisher](https://github.com/suenot/video-publisher) | Drive YouTube Studio → upload with metadata, channel switch, visibility |
 
-**Flow:** `article → gaia → video-maker → video-metadata → video-publisher → YouTube`
+**Flow:** `article → gaia → video-maker → youtube-automation-metadata → video-publisher → YouTube`
 (the published video is then embedded back into the blog article).
 
 ## What It Does
@@ -49,7 +49,7 @@ pip install openai-whisper
 ## Project Structure
 
 ```
-video-metadata/
+youtube-automation-metadata/
 ├── scripts/
 │   ├── prepare_metadata.py   # Main pipeline script
 │   └── run.sh                # Batch runner for multiple videos
