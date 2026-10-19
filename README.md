@@ -17,9 +17,9 @@ logged-in browser sessions (Camoufox) and local media tooling.
 | 1 | Generate | [gaia](https://github.com/suenot/gaia) | Drive NotebookLM / Gemini / Flow from a logged-in session → audio overview + slide deck |
 | 2 | Build | [video-maker](https://github.com/suenot/video-maker) | Audio narration + slide-deck PDF → synced MP4 (+ SRT, thumbnail) |
 | **3** | **Describe** | **[youtube-automation-metadata](https://github.com/suenot/youtube-automation-metadata)** ⬅ *this repo* | Video + article → YouTube title / description / tags / chapter timestamps |
-| 4 | Publish | [video-publisher](https://github.com/suenot/video-publisher) | Drive YouTube Studio → upload with metadata, channel switch, visibility |
+| 4 | Publish | [youtube-automation-prepare](https://github.com/suenot/youtube-automation-prepare) | Drive YouTube Studio → upload with metadata, channel switch, visibility |
 
-**Flow:** `article → gaia → video-maker → youtube-automation-metadata → video-publisher → YouTube`
+**Flow:** `article → gaia → video-maker → youtube-automation-metadata → youtube-automation-prepare → YouTube`
 (the published video is then embedded back into the blog article).
 
 ## What It Does
@@ -123,7 +123,7 @@ The tool expects blog articles in Markdown with YAML frontmatter at a configurab
 
 - [gaia](https://github.com/suenot/gaia) — generates the audio + slides upstream
 - [video-maker](https://github.com/suenot/video-maker) — generates the video itself from audio + PDF slides
-- [video-publisher](https://github.com/suenot/video-publisher) — uploads the video (with this metadata) to YouTube
+- [youtube-automation-prepare](https://github.com/suenot/youtube-automation-prepare) — uploads the video (with this metadata) to YouTube
 
 ## License
 

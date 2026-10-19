@@ -13,9 +13,9 @@ youtube-automation-metadata — **этап 3** автоматического к
 | 1 | Генерация | [gaia](https://github.com/suenot/gaia) | Управляет NotebookLM / Gemini / Flow из залогиненной сессии → аудио-обзор + слайды |
 | 2 | Сборка | [video-maker](https://github.com/suenot/video-maker) | Аудио + PDF-слайды → синхронизированный MP4 (+ SRT, миниатюра) |
 | **3** | **Описание** | **[youtube-automation-metadata](https://github.com/suenot/youtube-automation-metadata)** ⬅ *этот репозиторий* | Видео + статья → title / description / теги / тайм-коды глав для YouTube |
-| 4 | Публикация | [video-publisher](https://github.com/suenot/video-publisher) | Управляет YouTube Studio → заливка с метаданными, выбор канала, видимость |
+| 4 | Публикация | [youtube-automation-prepare](https://github.com/suenot/youtube-automation-prepare) | Управляет YouTube Studio → заливка с метаданными, выбор канала, видимость |
 
-**Поток:** `статья → gaia → video-maker → youtube-automation-metadata → video-publisher → YouTube`
+**Поток:** `статья → gaia → video-maker → youtube-automation-metadata → youtube-automation-prepare → YouTube`
 (опубликованное видео затем встраивается обратно в статью блога).
 
 ## Что делает
@@ -119,7 +119,7 @@ bash scripts/run.sh
 
 - [gaia](https://github.com/suenot/gaia) — генерирует аудио + слайды выше по конвейеру
 - [video-maker](https://github.com/suenot/video-maker) — генерирует само видео из аудио + PDF-слайдов
-- [video-publisher](https://github.com/suenot/video-publisher) — заливает видео (с этими метаданными) на YouTube
+- [youtube-automation-prepare](https://github.com/suenot/youtube-automation-prepare) — заливает видео (с этими метаданными) на YouTube
 
 ## Лицензия
 
